@@ -192,7 +192,7 @@ Behaves like a 4x1 mux
 ---
 ##
 
-### EXAMPLE 8 : DEMUX CASE : for statement
+### EXAMPLE 8 : DEMUX CASE : case statement
 ##
 ### .........................RTL DESIGN.................
 <img width="940" height="442" alt="image" src="https://github.com/user-attachments/assets/48d55681-78a1-4ded-8c60-3622db7bc739" />
@@ -208,8 +208,17 @@ Behaves like a 4x1 mux
 
 GLS and RTL SIMULATIONS MATCH
 
+---
+##
 
-### .........................DEMUX For................
+### EXAMPLE 9 : DEMUX  : for statement
+##
+
+### .........................RTL DESIGN.................
+<img width="940" height="367" alt="image" src="https://github.com/user-attachments/assets/4922644b-5911-4bde-92aa-e14ab812a2b2" />
+
+### .........................RTL SIMULATION.................
+<img width="940" height="343" alt="image" src="https://github.com/user-attachments/assets/52cdbd42-828a-4a7e-8415-dbba5e42d2ec" />
 
 
 
