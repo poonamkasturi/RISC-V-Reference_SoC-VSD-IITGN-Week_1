@@ -2,6 +2,7 @@
 
 ## DAY 4 of WEEK 1 of 20 WEEK PROGRAM
 
+### 🔰 DAY 4: TOPICS -----
 - [Day4- GLS, blocking vs non-blocking and Synthesis-Simulation mismatch](#GLS-,-blocking-vs-non---blocking-and-Synthesis---Simulation-mismatch)
    1. [GLS concepts and flow using iverilog](#GLS-concepts-and-flow-using-iverilog)
    2. [GLS setup using iverilog ](#GLS-setup-using-iverilog)
