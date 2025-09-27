@@ -1,7 +1,7 @@
 ## DAY 5: 
      ➡️ Incomplete If - EXAMPLE 1, 2
      ➡️ Incomplete Case - EXAMPLE 3, 4, 5, 6
-     ➡️ 
+     ➡️ For and Generate
 
 ##
 
@@ -168,12 +168,48 @@ Sel 11, x = i1 ,  y = i2
 <img width="350" height="300" alt="image" src="https://github.com/user-attachments/assets/c917b1ec-1279-4225-b757-d8638b497fd1" />
 
 
+### .........................GLS SIMULATION.................
+<img width="940" height="266" alt="image" src="https://github.com/user-attachments/assets/a3e944e8-0c69-4719-8372-3bb22b1770c2" />
+> GLS does not latches whereas RTL simulation latches ……it is a case of SIMULATION – SYNTHESIS MISMATCH
+
+
+---
+##
+
+### EXAMPLE 7 : MUX GENERATE : for statement
+##
+
+### .........................RTL DESIGN.................
+<img width="700" height="300" alt="image" src="https://github.com/user-attachments/assets/e726e3cd-be8d-473f-8422-18dce420da33" />
+
+### .........................RTL SIMULATION................
+<img width="700" height="400" alt="image" src="https://github.com/user-attachments/assets/f904bcfd-656f-4c57-86ec-fddcd68aa5bd" />
+Behaves like a 4x1 mux
+
+### .........................SYNTHESISED DESIGN.................
+<img width="700" height="630" alt="image" src="https://github.com/user-attachments/assets/1b806d47-7958-45f0-a2f5-cfba6943e52a" />
+
+---
+##
+
+### EXAMPLE 8 : DEMUX CASE : for statement
+##
+### .........................RTL DESIGN.................
+<img width="940" height="442" alt="image" src="https://github.com/user-attachments/assets/48d55681-78a1-4ded-8c60-3622db7bc739" />
+
 ### .........................RTL SIMULATION.................
-### .........................RTL SIMULATION.................
-### .........................RTL SIMULATION.................
-### .........................RTL SIMULATION.................
-### .........................RTL SIMULATION.................
-### .........................RTL SIMULATION.................
+<img width="940" height="349" alt="image" src="https://github.com/user-attachments/assets/27e5827f-5618-45ac-b887-771c4b2386c3" />
+
+### .........................SYNTHESISED DESIGN.................
+<img width="940" height="818" alt="image" src="https://github.com/user-attachments/assets/06f06454-365c-4f96-bf4c-06e8071b79b0" />
+
+### .........................GLS SIMULATION.................
+<img width="940" height="330" alt="image" src="https://github.com/user-attachments/assets/957d2991-11c2-46f9-96de-e9bb6312c183" />
+
+GLS and RTL SIMULATIONS MATCH
+
+
+### .........................DEMUX For................
 
 
 
