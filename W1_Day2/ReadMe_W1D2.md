@@ -125,7 +125,7 @@ Delay : and2_0  > and2_2 > and2_4
 Cosider an RTL design with **two sub-modules**, both instantiated inside the **top module** as shown in the image below:
 
 > 📷 *(image showing RTL hierarchy with sub-modules u1 and u2)*
-<img width="369" height="200" alt="mutiple_modules" src="https://github.com/user-attachments/assets/280ac112-9f8b-4d71-a058-6819688e14ee" />
+<img width="500" height="600" alt="mutiple_modules" src="https://github.com/user-attachments/assets/280ac112-9f8b-4d71-a058-6819688e14ee" />
 
 ---
 
@@ -134,7 +134,7 @@ Based on the RTL code, we expect the synthesized netlist to consist of:
     - AND gates      
     - OR gates      
 > These gates are expected to be inferred from the standard cell library.
-<img width="393" height="296" alt="mutiple_modules_synth" src="https://github.com/user-attachments/assets/25083310-61ef-4956-b8a7-4468e747b55f" />
+<img width="700" height="500" alt="mutiple_modules_synth" src="https://github.com/user-attachments/assets/25083310-61ef-4956-b8a7-4468e747b55f" />
 
 
 ---
@@ -144,7 +144,7 @@ However, the synthesis result reveals that the **hierarchy has been preserved**.
 Instead of flattening the design into gates, the synthesis tool retains the **sub-module structure**.   
 
 > ✅ Sub-modules `u1` and `u2` are used in place of individual gates in the synthesized design hierarchy.
-<img width="611" height="360" alt="multiple_hier_net" src="https://github.com/user-attachments/assets/1399712e-746c-4c3a-95f9-f5a1605c248c" />
+<img width="700" height="500" alt="multiple_hier_net" src="https://github.com/user-attachments/assets/1399712e-746c-4c3a-95f9-f5a1605c248c" />
 
 
 ---
@@ -199,11 +199,11 @@ $ write_verilog -noattr multiple_modules_Flat.v			             : WRITE FLATTENED
 Below image shows the difference between the Hierarchical and flattened synthesized netlist:
 
 
-<img width="471" height="364" alt="Hier_vs_Flat" src="https://github.com/user-attachments/assets/ca19d930-6aa2-4402-ba5c-d8c7a24b2a6d" />
+<img width="600" height="500" alt="Hier_vs_Flat" src="https://github.com/user-attachments/assets/ca19d930-6aa2-4402-ba5c-d8c7a24b2a6d" />
 
 Below image show the generated netlist when desing is flattened:
 
-<img width="958" height="106" alt="Flatten_net" src="https://github.com/user-attachments/assets/7308c143-da1b-4433-82ad-4ca2834738fd" />
+<img width="800" height="300" alt="Flatten_net" src="https://github.com/user-attachments/assets/7308c143-da1b-4433-82ad-4ca2834738fd" />
 
 
 ### 🔄 2.2.3 Submodule Level Synthesis   
@@ -225,12 +225,12 @@ After synthesis we have find out that synth command just looks at the specified 
 
 Below images show the sub module synthesis of sub_module1:
 
-<img width="338" height="338" alt="sub_all" src="https://github.com/user-attachments/assets/723915ae-7bd7-49d9-8018-179ad820e439" />
+<img width="500" height="400" alt="sub_all" src="https://github.com/user-attachments/assets/723915ae-7bd7-49d9-8018-179ad820e439" />
 
 
 Below images show the sub module synthesize netlist:
 
-<img width="959" height="228" alt="sub_net" src="https://github.com/user-attachments/assets/7ac8c534-aef3-4245-b20d-653bbe05bfc2" />
+<img width="500" height="300" alt="sub_net" src="https://github.com/user-attachments/assets/7ac8c534-aef3-4245-b20d-653bbe05bfc2" />
 
 
 ### ⏱️ 2.3 Flop Coding Styles and Optimization
@@ -243,7 +243,7 @@ In a purely combinational circuit, every gate introduces a propagation delay - a
 From Boolean algebra, the output of the circuit should always be 1.    
 However, due to gate delays, the actual output may momentarily dip, as shown in the timing diagram:
 
-<img width="469" height="158" alt="Glitch wave" src="https://github.com/user-attachments/assets/fca5f3b9-3e30-4008-873d-a11eb57a7b8c" />
+<img width="700" height="400" alt="Glitch wave" src="https://github.com/user-attachments/assets/fca5f3b9-3e30-4008-873d-a11eb57a7b8c" />
 
 Glitch and Timing Waveform
 
@@ -324,20 +324,20 @@ $ show
 ```
 #### Asynchronous reset D-Flip flop
     - reset does not waits for the clock edge
-<img width="609" height="286" alt="dff_asynch_res" src="https://github.com/user-attachments/assets/3e3bb173-f68a-406d-b762-6e7bb0319382" />
+<img width="800" height="600" alt="dff_asynch_res" src="https://github.com/user-attachments/assets/3e3bb173-f68a-406d-b762-6e7bb0319382" />
 
 #### Asynchronous set D-Flip flop
     - set will happen only at the next clock edge despite the time when set signal is asserted
-<img width="610" height="278" alt="dff_asynch_set" src="https://github.com/user-attachments/assets/d09d5d54-c281-46a2-ac87-d9f7d27d93e7" />
+<img width="800" height="600" alt="dff_asynch_set" src="https://github.com/user-attachments/assets/d09d5d54-c281-46a2-ac87-d9f7d27d93e7" />
 
 #### Synchronous reset D-Flip flop 
     - reset will happen only at the next clock edge despite the time when set signal is asserted
-<img width="629" height="307" alt="dff_synch_res" src="https://github.com/user-attachments/assets/0eb6d010-2584-4bda-a1e8-d7a8cf7fb0e2" />
+<img width="800" height="600" alt="dff_synch_res" src="https://github.com/user-attachments/assets/0eb6d010-2584-4bda-a1e8-d7a8cf7fb0e2" />
 
 #### Asynchronous & Synchronous reset D-Flip flop
     - The flop has both synchronous as well as asynchronous resetting options
     - Asynchronous reset will get the highest priority
-<img width="632" height="284" alt="dff_asynch_sync_res" src="https://github.com/user-attachments/assets/5006accf-6d2d-4c3b-9c8f-82ffb216e6b1" />
+<img width="800" height="600" alt="dff_asynch_sync_res" src="https://github.com/user-attachments/assets/5006accf-6d2d-4c3b-9c8f-82ffb216e6b1" />
 	
 **NOTE**: For asynchronous reset and synchronous set together, it will not cause race condition. 
           But if the desing have both synchronous reset and set ,it may cause race condition.
