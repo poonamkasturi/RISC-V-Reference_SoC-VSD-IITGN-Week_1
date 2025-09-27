@@ -58,24 +58,24 @@ To Gain a fabrication-aware understanding of digital design, bridging theory wit
     					and validate its structure and logic using **NetlistSVG** or other visualization tools.
 
   
-### 1. TOOLS USED:
+### TOOLS USED:
 
 * **Icarus Verilog:** It is a verilog simulation and synthesis tool. It operates as a compiler, compiling source code written in Verilog (IEEE-1364) into some target format.Icarus Verilog is an open source Verilog compiler that supports the IEEE-1364 Verilog HDL including IEEE1364-2005 plus.     
 * **GTKwave	:** GTKWave is a VCD waveform viewer based on the GTK library. This viewer support VCD and LXT formats for signal dumps.It also reads LXT, LXT2, VZT, FST and GHW files as well as standard Verilog VCD/EVCD files and allows their viewing.     
 * **Yosys 	:** Yosys is a framework for Verilog RTL synthesis. It currently has extensive Verilog-2005 support and provides a basic set of synthesis algorithms for various application domains.
 **Technology used:** Sky130 technology.   
 	
-### 2. Day1 - Introduction to Verilog RTL Design and Synthesis
+### 1. Day1 - Introduction to Verilog RTL Design and Synthesis
 The first day of the workshop covers the brief description of iverilog simulator, Test Bench setup, iverilog simulation flow  and lab using iverilog, gtkwave, yosys tools.    
 
-### 2.1 Introduction to iverilog, Design and Test Bench	
+### 1.1 Introduction to iverilog, Design and Test Bench	
 * **RTL Design :** It is the actual verilog code or set of verilog codes which has intended functionality to meet with the required specifications.
 Register Transfer Level (RTL) is an abstraction for defining the digital portions of a design. It is the principle abstraction used for defining electronic systems today and often serves as the golden model in the design and verification flow. The RTL design is usually captured using a hardware description language (HDL) such as Verilog or VHDL.
 	
 * **Test Bench :** It is the setup to apply stimulus(test_vectors) to the design to check its functionality. So to ensure that our design is obeying the required specification, we apply stimulus to the design ,observe its output and match it with respect to the specification.
 	
 	
-### 2.2 Simulating the Designs with iverilog
+### 1.2 Simulating the Designs with iverilog
 * **Simulation :** Simulation is the process by which the design model coded in the HDL gets executed (after a successful compilation and elaboration) based on a given execution model.It is done by using a simulation software (simulator) to verify the functional correctness of a digital design that is modeled using a HDL (hardware description language) like VHDL,Verilog. It is the process of checking whether the design is adhering to the given specs.
 		
 * **Simulator :** It is the tool used for simulating the design.The simulator used here is "iverilog". The RTL design is the implementation of the required specification and the functionality of the specs needs to be verified by simualting the design using simulator.
@@ -83,7 +83,7 @@ Register Transfer Level (RTL) is an abstraction for defining the digital portion
 * **How does a simulator work ?**
 Simulator works by continuously monitoring the changes in the inputs. Upon a change in any one of the inputs, the output is re-evaluated. If there is no change in input, the ouput will not be evaluated. Simulator dumps the change to the ouput to a file according to the change in input.
     
-## 2.3 Design and Test Bench setup
+## 1.3 Design and Test Bench setup
  * The RTL design written in verilog code has some primary inputs and primary outputs. It may have one or more than one primary inputs and one or more than one primary outputs.
  * We need to give stimulus to all the primary inputs and need to observe the primary outputs. Thus we need stimulus generator at the input and stimulus observer at the output.
  * For giving stimulus we write the test bench, for that the design(module) is instantiated in the test bench, then stimulus is applied.
@@ -92,9 +92,9 @@ Simulator works by continuously monitoring the changes in the inputs. Upon a cha
   <dd>Below image shows the test bench set up : </dd>
  </dl>
  
-![](https://github.com/poonamkasturi/RISC-V-SoC-VSD-IITGN_week1/blob/main/W1_Day1/W1D1_screenshots/Test_bench_setup.png)
+![](https://github.com/poonamkasturi/RISC-V-Reference_SoC-VSD-IITGN-Week_1/blob/main/W1_Day1/W1D1_ScreenShots/1.%20Test_bench_setup.png)
  	
-## 2.4 iverilog Simulation Flow
+## 1.4 iverilog Simulation Flow
 * **Inputs to the simulator**:  
     The iverilog simulator accepts two main inputs.  
 	1. RTL Design    : This is the behavioral description of the specs in some HDL language(verilog here).  
@@ -107,9 +107,9 @@ Simulator works by continuously monitoring the changes in the inputs. Upon a cha
   <dd>Below image shows the complete iverilog simulation flow : </dd>
 </dl>	 
  
-![](https://github.com/poonamkasturi/RISC-V-SoC-VSD-IITGN_week1/blob/main/W1_Day1/W1D1_screenshots/iverilog_sim_flow.png)
+![](https://github.com/poonamkasturi/RISC-V-Reference_SoC-VSD-IITGN-Week_1/blob/main/W1_Day1/W1D1_ScreenShots/2.%20iverilog_sim_flow.png)
 
-## 2.5 Iverilog Simulation of Multiplexer(MUX)
+## 1.5 Iverilog Simulation of Multiplexer(MUX)
 Iverilog simulation is done as per below steps:
 *  Iverilog takes RTL design and test bench as input and generates a executable file " a.out".
 *  On executing "a.out" ,it dumps the simulation in value change dump format(.vcd file).
@@ -136,23 +136,22 @@ $ gtkwave tb_good_mux.vcd
 ```
 ### 4. To view the signal on the wave window click and drag them to the signal column..
 
-![](DAY_1/good_mux_waveform.png)
 
      
-## 2.6 Synthesis with Yosys
+## 1.6 Synthesis with Yosys
 **Synthesis :** Synthesis is the process during which RTL design actually gets converted into a circuit. There are special programing languages called Hardware Description Languages (HDLs) which are used to describe the hardware of a circuit and then the computer makes the circuit based on the program written. After synthesis we obtain a “Gate Level Netlist”. This netlist is how our circuit will look. The tool used here to do synthesis is Yosys.
 In simple terms:
 * It does RTL to gate level translation
 * The design is converted into gates and connections are made between them.
 * This gives out a file called netlist.
 	      
-### 2.6.1 Yosys Synthesis Flow setup
+### 1.6.1 Yosys Synthesis Flow setup
 The synthesis tool takes the RTL design and the liberty file(.lib) as inputs and synthesize the RTL design into netlist which is the gate level representation of the RTL design.
 
 Below image shows the Yosys synthesis flow setup: 
 
+![](https://github.com/poonamkasturi/RISC-V-Reference_SoC-VSD-IITGN-Week_1/blob/main/W1_Day1/W1D1_ScreenShots/Yosys_setup.png)
 
-![](DAY_1/Yosys_setup.png)  
    
 Below are the steps to synthesize the multiplexer design(good_mux.v):
 ### 1. To invoke Yosys:   
@@ -161,8 +160,7 @@ $ cd verilog_files
 $ yosys
 ```
 Below image show the yosys synthesis suite:
-
-![](DAY_1/yosys_invoke.png)
+![](https://github.com/poonamkasturi/RISC-V-Reference_SoC-VSD-IITGN-Week_1/blob/main/W1_Day1/W1D1_ScreenShots/yosys_invoke.png)
 
 ### 2. Reading sky130 standard library :
 ```
@@ -177,8 +175,7 @@ $ read_verilog good_mux.v
 ```
 **read_verilog :** This command is used to read the verilog desgin file. It load modules from a Verilog file to the current design.
 Below image show the yosys synthesis suite:
-
-![](DAY_1/Yosys_setup_2.png)
+![](https://github.com/poonamkasturi/RISC-V-Reference_SoC-VSD-IITGN-Week_1/blob/main/W1_Day1/W1D1_ScreenShots/Yosys_setup_2.png)
 
 ### 4. Synthesize the top level module  : Below command is used to synthesize the module
 ```
@@ -187,7 +184,7 @@ $ synth -top good_mux
 **synth :** This command runs the default synthesis script. This command does not operate on partly selected designs.
 **-top <module> :** This option use the specified module as top module (default='top'). Here we have module name "good_mux".
 	
-![](DAY_1/Yosys_setup_3.png)
+![](https://github.com/poonamkasturi/RISC-V-Reference_SoC-VSD-IITGN-Week_1/blob/main/W1_Day1/W1D1_ScreenShots/Yosys_setup_3.png)
 	
 ### 5. Mapping to the standard library 
 ```
@@ -197,13 +194,15 @@ $ abc -liberty ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib
 **-liberty <file> :** It generate netlists for the specified cell library (using the liberty file format).
 
 **NOTE:** The path of the sky130_fd_sc_hd__tt_025C_1v80.lib   should match with the path where the file is saved in the system
-	
-![](DAY_1/Yosys_setup_4.png)
+![](https://github.com/poonamkasturi/RISC-V-Reference_SoC-VSD-IITGN-Week_1/blob/main/W1_Day1/W1D1_ScreenShots/Yosys_setup_4.png)	
 	
 ### 6. To view the result as a grapviz use the below command
 ```
 $ show
 ``` 
 **Show :** It creates  graphviz DOT file for the selected part of the design and compile it to a graphics file (usually SVG or PostScript).It is used to show the logic realized from the verilog code after synthesis.
+![](https://github.com/poonamkasturi/RISC-V-Reference_SoC-VSD-IITGN-Week_1/blob/main/W1_Day1/W1D1_ScreenShots/Yosys_setup_5.png)
 	
- ![](DAY_1/Yosys_setup_5.png)
+### 7. To write the netlist in a .v file
+$ write_verilog -noattr <filename.v>
+![](https://github.com/poonamkasturi/RISC-V-Reference_SoC-VSD-IITGN-Week_1/blob/main/W1_Day1/W1D1_ScreenShots/Yosys_setup_6.png)
