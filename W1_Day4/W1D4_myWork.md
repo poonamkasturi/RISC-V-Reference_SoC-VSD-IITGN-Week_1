@@ -1,3 +1,9 @@
+## DAY 4: 
+     ➡️ RTL Vs GATE LEVEL SIMULATION (GLS) 
+     ➡️ SIMULATION - SYNTHESIS MISMATCH - EXAMPLE 1: due to incomplete sensitivity List 
+     ➡️ SIMULATION - SYNTHESIS MISMATCH - EXAMPLE 2: due to blocking statement caveat
+
+##
 
 ## RTL vs Gate-Level Simulation
 To validate the correctness of the synthesized netlist, 
@@ -37,7 +43,9 @@ Here we are doing only functional equivalence check and not the timing equivalen
 
 ## SIMULATION - SYNTHESIS MISMATCH
 ## 
-EXAMPLE 1: BAD MUX DESIGN TO HIGHLIGHT SIMULATION SYNTHESIS MISMATCH due to incomplete sensitivity list
+#### EXAMPLE 1: BAD MUX DESIGN due to incomplete sensitivity list
+##
+
 #### ........................................RTL MODULE..............
 <img width="600" height="300" alt="image" src="https://github.com/user-attachments/assets/1705a00e-0444-4b59-9e42-281cbdf01f9f" />
 
@@ -64,7 +72,9 @@ The comparison of RTL and GLS simulated waveforms clearly highlight the
 ```
 ---
 ## 
-EXAMPLE 2: TO HIGHLIGHT SIMULATION SYNTHESIS MISMATCH due to blocking statements caveat
+#### EXAMPLE 2: TO HIGHLIGHT SIMULATION SYNTHESIS MISMATCH due to blocking statements caveat
+##
+
 #### ........................................RTL MODULE..............
 D = (a and b ) or c
 <img width="872" height="294" alt="image" src="https://github.com/user-attachments/assets/77e399a7-202d-4e29-94e5-e52ad4684b6d" />
