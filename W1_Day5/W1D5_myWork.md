@@ -220,5 +220,9 @@ GLS and RTL SIMULATIONS MATCH
 ### .........................RTL SIMULATION.................
 <img width="940" height="343" alt="image" src="https://github.com/user-attachments/assets/52cdbd42-828a-4a7e-8415-dbba5e42d2ec" />
 
+### .........................SYNTHESISED DESIGN.................
+<img width="940" height="834" alt="image" src="https://github.com/user-attachments/assets/6421442d-337f-4f10-859f-09c3c2d6acda" />
+
+Same response for simulation and sunthesised designs is received for both implementation for demux - case and for statements
 
 
