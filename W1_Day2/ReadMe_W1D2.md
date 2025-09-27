@@ -85,17 +85,23 @@ They are a collection of logic module/Standard cells and includes different type
 > ...They are widely supported across EDA tools and form the backbone of cell-level timing models
 
 Below image shows some details of sky130_fd_sc_hd__tt_025C_1v80.lib :
-![](/DAY_2/Lib_details.png)
+
+<img width="400" height="550" alt="Lib_details" src="https://github.com/user-attachments/assets/60b1e088-ea0f-4d2c-9d5f-943e050ed7f2" />
+
 	
 "sky130_fd_sc_hd__a21110_1" :  cell definitions inside the .lib file as shown in the below image.
-![](/DAY_2/cell_a2111o.png)
+
+<img width="600" height="350" alt="cell_a2111o" src="https://github.com/user-attachments/assets/f4333e8c-2b55-4a91-b1fb-091ec4262f37" />
+
 
 This cell implements logic function with 5 inputs.       
 The logic implemens AND of first two inputs and then output of AND along-with three more inputs is ORed.      
 The cell definition also shows amount of leakage power for different combinations of 5 inputs(32 combinations here).
 
 Different flavours of same cell in the .lib file.
-![](/DAY_2/and_versions.png)
+
+<img width="750" height="800" alt="and_versions" src="https://github.com/user-attachments/assets/b4df3b3d-9d58-4011-9f2a-789fc2b9e8fb" />
+
  
 As per above image, the different flavours of  "AND" gate have different size, area and power consumption.       
 Below details show the comparison between these different versions of " AND " gate:
@@ -118,7 +124,8 @@ Delay : and2_0  > and2_2 > and2_4
 **📐 RTL Design Overview**
 Cosider an RTL design with **two sub-modules**, both instantiated inside the **top module** as shown in the image below:
 
-> 📷 *(Insert image here showing RTL hierarchy with sub-modules u1 and u2)*
+> 📷 *(image showing RTL hierarchy with sub-modules u1 and u2)*
+<img width="369" height="200" alt="mutiple_modules" src="https://github.com/user-attachments/assets/280ac112-9f8b-4d71-a058-6819688e14ee" />
 
 ---
 
@@ -127,6 +134,8 @@ Based on the RTL code, we expect the synthesized netlist to consist of:
     - AND gates      
     - OR gates      
 > These gates are expected to be inferred from the standard cell library.
+<img width="393" height="296" alt="mutiple_modules_synth" src="https://github.com/user-attachments/assets/25083310-61ef-4956-b8a7-4468e747b55f" />
+
 
 ---
 
@@ -135,6 +144,8 @@ However, the synthesis result reveals that the **hierarchy has been preserved**.
 Instead of flattening the design into gates, the synthesis tool retains the **sub-module structure**.   
 
 > ✅ Sub-modules `u1` and `u2` are used in place of individual gates in the synthesized design hierarchy.
+<img width="611" height="360" alt="multiple_hier_net" src="https://github.com/user-attachments/assets/1399712e-746c-4c3a-95f9-f5a1605c248c" />
+
 
 ---
 
@@ -187,10 +198,13 @@ $ write_verilog -noattr multiple_modules_Flat.v			             : WRITE FLATTENED
 	
 Below image shows the difference between the Hierarchical and flattened synthesized netlist:
 
-![](/DAY_2/Hier_vs_Flat.png)
+
+<img width="471" height="364" alt="Hier_vs_Flat" src="https://github.com/user-attachments/assets/ca19d930-6aa2-4402-ba5c-d8c7a24b2a6d" />
 
 Below image show the generated netlist when desing is flattened:
-![](/DAY_2/Flatten_net.png)
+
+<img width="958" height="106" alt="Flatten_net" src="https://github.com/user-attachments/assets/7308c143-da1b-4433-82ad-4ca2834738fd" />
+
 
 ### 🔄 2.2.3 Submodule Level Synthesis   
 With multiple sub modules in  top level module, sub module level syntheis can be done.  
@@ -210,10 +224,13 @@ $ write_verilog -noattr multiple_modules_sub.v
 After synthesis we have find out that synth command just looks at the specified sub_module1 alone and sub_module2 is ommitted from synthesis.
 
 Below images show the sub module synthesis of sub_module1:
-![](/DAY_2/sub_all.png)
+
+<img width="338" height="338" alt="sub_all" src="https://github.com/user-attachments/assets/723915ae-7bd7-49d9-8018-179ad820e439" />
+
 
 Below images show the sub module synthesize netlist:
-![](/DAY_2/sub_net.png)	
+
+<img width="959" height="228" alt="sub_net" src="https://github.com/user-attachments/assets/7ac8c534-aef3-4245-b20d-653bbe05bfc2" />
 
 
 ### ⏱️ 2.3 Flop Coding Styles and Optimization
@@ -226,8 +243,8 @@ In a purely combinational circuit, every gate introduces a propagation delay - a
 From Boolean algebra, the output of the circuit should always be 1.    
 However, due to gate delays, the actual output may momentarily dip, as shown in the timing diagram:
 
-![](/DAY_2/Glitch&wave.png)
- 
+<img width="469" height="158" alt="Glitch wave" src="https://github.com/user-attachments/assets/fca5f3b9-3e30-4008-873d-a11eb57a7b8c" />
+
 Glitch and Timing Waveform
 
 >The more complex the combinational logic, higher the chances of glitches.
@@ -307,13 +324,20 @@ $ show
 ```
 #### Asynchronous reset D-Flip flop
     - reset does not waits for the clock edge
+<img width="609" height="286" alt="dff_asynch_res" src="https://github.com/user-attachments/assets/3e3bb173-f68a-406d-b762-6e7bb0319382" />
+
 #### Asynchronous set D-Flip flop
     - set will happen only at the next clock edge despite the time when set signal is asserted
+<img width="610" height="278" alt="dff_asynch_set" src="https://github.com/user-attachments/assets/d09d5d54-c281-46a2-ac87-d9f7d27d93e7" />
+
 #### Synchronous reset D-Flip flop 
     - reset will happen only at the next clock edge despite the time when set signal is asserted
+<img width="629" height="307" alt="dff_synch_res" src="https://github.com/user-attachments/assets/0eb6d010-2584-4bda-a1e8-d7a8cf7fb0e2" />
+
 #### Asynchronous & Synchronous reset D-Flip flop
     - The flop has both synchronous as well as asynchronous resetting options
     - Asynchronous reset will get the highest priority
+<img width="632" height="284" alt="dff_asynch_sync_res" src="https://github.com/user-attachments/assets/5006accf-6d2d-4c3b-9c8f-82ffb216e6b1" />
 	
 **NOTE**: For asynchronous reset and synchronous set together, it will not cause race condition. 
           But if the desing have both synchronous reset and set ,it may cause race condition.
