@@ -233,3 +233,26 @@ Data is read when both Asynchronous reset and Synchronous reset are low
 
 <img width="700" height="300" alt="image" src="https://github.com/user-attachments/assets/a76f27f8-d6a0-4033-a3f0-f54217e1d704" />
 
+
+## INTERESTING OPTIMIZATIONS
+### y = a x 2
+<img width="600" height="150" alt="image" src="https://github.com/user-attachments/assets/ce0cecbe-56af-4bcd-adb7-ba7dd1c5be6f" />
+
+<img width="300" height="150" alt="image" src="https://github.com/user-attachments/assets/5dd92356-3dc6-467c-a36b-2569b3f335c9" />
+
+<img width="700" height="300" alt="image" src="https://github.com/user-attachments/assets/0ae59fcf-40d8-455e-b360-049f24e3afd8" />
+
+
+### y = a x 9
+<img width="700" height="200" alt="image" src="https://github.com/user-attachments/assets/2400c6bf-2087-450d-9afd-b20cb8df95f0" />
+
+<img width="300" height="150" alt="image" src="https://github.com/user-attachments/assets/7a7397e5-fbfa-4033-9666-882e547bb565" />
+
+<img width="700" height="200" alt="image" src="https://github.com/user-attachments/assets/70b761df-599a-456e-b7c6-e114069ad50f" />
+
+
+
+
+
+
+
