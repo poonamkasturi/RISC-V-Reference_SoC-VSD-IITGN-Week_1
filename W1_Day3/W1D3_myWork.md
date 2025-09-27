@@ -1,4 +1,10 @@
-# COMBINATIONAL LOGIC OPTIMIZATION
+## DAY 3: 
+     ➡️ COMBINATIONAL LOGIC OPTIMIZATION
+     ➡️ SEQUENTIAL LOGIC OPTIMIZATION
+     ➡️ OPTIMIZATION OF UNUSED STATES
+
+#
+## COMBINATIONAL LOGIC OPTIMIZATION
 ## opt_check.v
 <img width="700" height="300" alt="image" src="https://github.com/user-attachments/assets/c7a057df-793e-4d36-bcea-1a48a144cdf7" />
 
@@ -67,7 +73,7 @@ abc – liberty ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib
 <img width="400" height="400" alt="image" src="https://github.com/user-attachments/assets/4a1eed29-c8e5-4e8c-9ba9-b046e25abc13" />
 
 ---
-# SEQUENTIAL LOGIC OPTIMIZATION
+## SEQUENTIAL LOGIC OPTIMIZATION
 ## dff_const1.v
 <img width="700" height="300" alt="image" src="https://github.com/user-attachments/assets/34b7870b-e36c-4ffc-93fc-1093dc4f2fd1" />
 
