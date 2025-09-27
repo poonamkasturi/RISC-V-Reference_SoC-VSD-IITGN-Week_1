@@ -2,6 +2,7 @@
 
 ## DAY 5 of WEEK 1 of 20 WEEK PROGRAM
 
+### 🔰 DAY 3: TOPICS -----
 
 - [Day5 - If, case, for loop and for generate](#Day5---If-,-case-,-for-loop-and-for-generate)
    1. [If statements](#If-statements)
