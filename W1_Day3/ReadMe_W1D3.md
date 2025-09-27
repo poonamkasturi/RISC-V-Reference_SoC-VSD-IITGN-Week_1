@@ -44,12 +44,11 @@ Below image show propagation of constant input to the output:
 <img width="500" height="300" alt="image" src="https://github.com/user-attachments/assets/e0e51e26-1ed0-43f2-9987-2167247e632a" />
 
 
-
 ### 3.2.2 Boolean Logic Optimization:
 In terms of Boolean algebra, the optimization of a complex boolean expression is a process of finding a simpler one, which would upon evaluation ultimately produce the same results as the original one. This technique uses boolean algebra rules/theorems to minimize the logic.
 Below image shows the example of optimization of given boolean logic:  
-<img width="600" height="400" alt="image" src="https://github.com/user-attachments/assets/45524337-d4f0-493a-a19e-06d8b0aa5266" />
 
+<img width="800" height="600" alt="Boolean_logic_optimization" src="https://github.com/user-attachments/assets/fe36ec7f-6765-47c1-80e6-1b7a83a52b78" />
 
 	
 ## 3.3 Sequential Logic Optimizations
@@ -60,13 +59,21 @@ Below are the techniques used for optimizimg the sequential logic :
 	* State Optimization
 	* Retiming
 	* Sequential Logic cloning(Floorplan aware synthesis)
+   
 ### 3.3.1 Sequential Constant Propagation
 
 In above code we can see that if ```set = 1 ``` then ``` Q = 1 ``` and when ``` set = 0 , clk = 1 ``` then ``` Q = 0 ```. Thus output is following input 'd' at clock edge. So the output Q can not be optimized, thus sequential constant can not propagate. 
 	If a constant connected to the input of a D Flop makes the Q output always constant.. 
                 then the flop can be optimized (replaced by the constant propogated)
+
+<img width="800" height="600" alt="Sequential_Constant_propagation_opt" src="https://github.com/user-attachments/assets/38699711-bb3a-4c99-9d18-750fcccab4d5" />
+
+
   But if a constant connected to the input of a D Flop does not makes its Q output a constant value
                 then that flop or logic can not be optimized. The Flop needs to be retained
+
+<img width="450" height="300" alt="Sequential_Constant_NO_propagation_" src="https://github.com/user-attachments/assets/d0a23e40-b98f-4880-8f9e-332e4ccd5424" />
+
 **NOTE** :
 * A constant connected to the input of a flop does not mean that we can always optimize its output.
 * Every flop with D input tied to '0' is not a sequential constant.
@@ -98,16 +105,23 @@ $ show
 
 **-purge** : also remove internal nets if they have a public name.
 
+<img width="800" height="900" alt="Comb_yosys_opt" src="https://github.com/user-attachments/assets/7154dec8-ecdc-4343-a37d-36f3c6ddd4fa" />
+
+
 ### 3.4.2 Sequential Logic Optimizations
 To understand optimization with yosys, lets take an exmaple of dff_const5.v :
 In the below circuit we can see that the circuit obatained after synthesis and optimization is similar to what we expected as per RTL code. Thus in this case no optimization is possible. 
 
+<img width="900" height="900" alt="Sequential_yosys_opt" src="https://github.com/user-attachments/assets/b8e7f12a-78de-4786-8db1-b421cb6b1e60" />
+
 
 ## 3.5 Sequential optimizations for unused outputs :
 Lets take an exmaple code counter_opt.v to understand this case:
-
+<img width="900" height="900" alt="Sequential_unused_output" src="https://github.com/user-attachments/assets/d7d7a88f-3a1c-4a8a-9192-10c3d632c750" />
 
 At first going through code, we might be think that the design would contain 3 flops after synthesis as it seems to be a 3-bit counter. But, if we look closely, after a reset ,value of count is 000 .The value of count is increasing on positive edge of clock but the Output q is simply following count[0] as per code and its simulation result. 
 On synthesizing we get the optmized circuit , in which we can  that only on e flop is inferred for the code and the output of flop ,Q is count[0]. The input to the flop is compliment of output.
 	
 Thus we can say that, the logic which is no way related to primary output will be optimized by synthesis tool.
+<img width="900" height="900" alt="Sequential_unused_output_opt" src="https://github.com/user-attachments/assets/335e1a66-5b3c-447e-80c7-ab7c370373cd" />
+
